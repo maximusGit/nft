@@ -12,7 +12,7 @@ import { AuctionView, AuctionViewState, useAuctions } from '../../hooks';
 
 const { TabPane } = Tabs;
 
-const { Content } = Layout;
+const { Content, Footer } = Layout;
 
 export enum LiveAuctionViewState {
   All = '0',
