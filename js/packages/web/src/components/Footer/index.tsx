@@ -29,14 +29,14 @@ export const FooterBar = () => {
     return(
           <Row gutter={[48,48]}>
             <Col span={8}>
-              <ul type={'none'}> 
+              <ul> 
   
                 <li><Typography.Title level={4}><strong>For Artists</strong></Typography.Title></li>
                 <li>Submit artist Profile</li>
               </ul>
             </Col>
             <Col span={8}>
-            <ul type={'none'}>
+            <ul>
             <li><Typography.Title level={4}><strong>Community</strong></Typography.Title></li>
                 <li>Submit artist Profile</li>
                 <li>Editorial</li>
@@ -48,7 +48,7 @@ export const FooterBar = () => {
               </ul>
             </Col>
             <Col span={8}>
-            <ul type={'none'}>
+            <ul>
             <li><Typography.Title level={4}><strong>Legle</strong></Typography.Title></li>
                 <li>Community</li>
                 <li>Guidelines</li>
@@ -78,17 +78,16 @@ export const FooterBar = () => {
         icon={<TwitterOutlined />}
       ></Button>
       <Button className="btn btn-primary">freffererfref</Button> */}
-      <Row gutter={[16,16]} >
-        <Col span={8}>
-          <FooterSubscription/>
-        </Col>
-        <Col span={16}>
-          <FooterInfo/>
-        </Col>
-
-        
-
-      </Row>
+      <div className="footer">
+        <Row gutter={[16,16]} >
+          <Col span={8}>
+            <FooterSubscription/>
+          </Col>
+          <Col span={16}>
+            <FooterInfo/>
+          </Col>
+        </Row>
+      </div>
     </>
   );
 };
