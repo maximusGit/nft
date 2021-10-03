@@ -9,8 +9,8 @@ export const FooterBar = () => {
 
   const FooterSubscription = ()=>{
     return(
-        <>
-        <Typography.Title level={2} style={{textAlign:"center", letterSpacing:"2px"}}><strong>For Artists</strong></Typography.Title>
+        <div>
+        <Typography.Title level={2} style={{textAlign:"center", letterSpacing:"5px"}}><strong>ARTIMAC</strong></Typography.Title>
           <p style={{textIndent: '20px', borderBottom:'1px solid grey'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quam, exercitationem cupiditate veritatis modi natus?</p>
           <h4 style={{textAlign:'center'}}> Subscribe to our newsletter </h4>
           <Row gutter={[8,8]}>
@@ -21,7 +21,7 @@ export const FooterBar = () => {
               <Button type="primary" style={{borderRadius:'5px'}}><strong>SUBSCRIBE</strong></Button>
             </Col>
           </Row>  
-          </>
+          </div>
       
     )
   }
