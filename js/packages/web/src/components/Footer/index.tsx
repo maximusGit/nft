@@ -18,7 +18,10 @@ export const FooterBar = () => {
               <Input placeholder="Email Adress"></Input>
             </Col>
             <Col>
-              <Button type="primary" style={{borderRadius:'5px'}}><strong>SUBSCRIBE</strong></Button>
+              <Button
+                  className="action-btn"
+                  style={{maxWidth:'100px', maxHeight:'30px', fontSize:'14px'}}
+                  >SUBSCRIBE</Button>
             </Col>
           </Row>  
           </div>

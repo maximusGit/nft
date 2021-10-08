@@ -48,6 +48,8 @@ const DefaultActions = ({ vertical = false }: { vertical?: boolean }) => {
   return (
     <div
       style={{
+        boxSizing: "border-box",
+        padding: "20px",
         display: 'flex',
         flexDirection: vertical ? 'column' : 'row',
       }}
@@ -63,6 +65,20 @@ const DefaultActions = ({ vertical = false }: { vertical?: boolean }) => {
       <Link to={`/artists`}>
         <Button className="app-btn">Creators</Button>
       </Link>
+      {connected ?(
+        <>
+        <div className="divider" style={{marginTop:"3%"}}/>
+       <UserActions/>
+       <CurrentUserBadge
+        showBalance={false}
+        showAddress={false}
+        iconSize={24}
+      />
+      </>
+      ) : (
+            <ConnectButton className="connect-btn" type="primary" allowWalletChange/>
+      )}
+
     </div>
   );
 };
@@ -97,6 +113,24 @@ const MetaplexMenu = () => {
                   <Button className="app-btn">Creators</Button>
                 </Link>
               </Menu.Item>
+              {connected ? (
+                <>
+                  <Menu.Item>
+                      <UserActions/>
+                  </Menu.Item>
+                  <Menu.Item>
+                  <CurrentUserBadge
+                    showBalance={false}
+                    showAddress={false}
+                    iconSize={24}
+                 />
+                  </Menu.Item>
+                </>
+              ):(
+              <Menu.Item>
+                 <ConnectButton type="primary" allowWalletChange />
+              </Menu.Item>
+              )}
             </Menu>
           }
         >
@@ -115,21 +149,21 @@ export const AppBar = () => {
     <>
       <div className="app-left app-bar-box">
         {window.location.hash !== '#/analytics' && <Notifications />}
-        <div className="divider" />
-        <MetaplexMenu />
       </div>
-      {connected ? (
-        <div className="app-right app-bar-box">
-          <UserActions />
-          <CurrentUserBadge
-            showBalance={false}
-            showAddress={false}
-            iconSize={24}
-          />
+        <div className="app-right app-bar-box" style={{padding:"10px"}}>
+          <MetaplexMenu/>
         </div>
-      ) : (
-        <ConnectButton type="primary" allowWalletChange />
-      )}
     </>
   );
 };
+// {connected ? (
+//   // <div className='app-bar-box'>
+//   // <UserActions/>
+//   // <CurrentUserBadge
+//   //   showBalance={false}
+//   //   showAddress={false}
+//   //   iconSize={24}
+//   // />
+//   // </div>
+// ) : (
+// )}
